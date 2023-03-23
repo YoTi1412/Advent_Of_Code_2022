@@ -1,29 +1,21 @@
-with open('input.txt') as f:
+with open("input.txt", "r") as f:
+    lines = [line.strip() for line in f.readlines()]
 
-    data = [i for i in f.read().strip().split("\n")]
-
-max_1 = 0
-max_2 = 0
-max_3 = 0
-count = 0
-
-for item in data:
-    if item == '':
-        count = 0
-
+totals = {}
+current_elf = 1
+for line in lines:
+    if line == "":
+        current_elf += 1
     else:
-        num = int(item)
-        count += num
+        Calories = int(line)
+        if current_elf not in totals:
+            totals[current_elf] = 0
+        totals[current_elf] += Calories
 
-    if count > max_1:
-        max_1 = count
+sorted_totals = sorted(totals.items(), key=lambda x: x[1], reverse=True)
 
-    elif count > max_2:
-        max_2 = count
+top_three_totals = sum([x[1] for x in sorted_totals[:3]])
 
-    elif count > max_3:
-        max_3 = count
-
-print("Answer of Part 1 : ", max_1)
-print("Answer of Part 2 : ", max_1 + max_2 + max_3)
+print("Answer of Part One:", sorted_totals[0][1])
+print("Answer of Part Two:", top_three_totals)
 
