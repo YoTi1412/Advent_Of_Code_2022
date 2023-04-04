@@ -14,10 +14,10 @@ Advent of Code has become a popular event for programmers around the world, and 
 
 | Day | Rust | Python |
 | --- | ---- | ------ |
-| 01  |   X  |   X    |
-| 02  |   X  |   X    |
-| 03  |   X  |   X    |
-| 04  |      |        |
+| 01  |   X  |    X   |
+| 02  |   X  |    X   |
+| 03  |   X  |    X   |
+| 04  |   X  |    X   |
 | 05  |      |        |
 | 06  |      |        |
 | 07  |      |        |
